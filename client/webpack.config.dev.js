@@ -24,8 +24,7 @@ module.exports = {
       require('postcss-import')({
         addDependencyTo: webpack
       }),
-      require('autoprefixer'),
-      require('cssnext'),
+      require('postcss-cssnext'),
       require('precss'),
       require('postcss-color-function')
     ];

@@ -2,3 +2,6 @@
 
 @import 'layout/base.css';
 @import 'layout/main.css';
+
+@import 'components/Header.css';
+@import 'components/MetroLine.css';
