@@ -3,5 +3,7 @@
 @import 'layout/base.css';
 @import 'layout/main.css';
 
+@import 'components/AddDisruption.css';
+@import 'components/Disruption.css';
 @import 'components/Header.css';
 @import 'components/MetroLine.css';

@@ -27,7 +27,7 @@ def get_all_disruptions():
     return JsonResponse(dict(data=all_disruptions))
 
 def create_disruption(request):
-    disruption = json.loads(request.body)
+    disruption = json.loads(request.body.decode())
     try:
         Disruption.objects.create(
             metro_line=MetroLine.objects.get(line_number=disruption["line_number"]),

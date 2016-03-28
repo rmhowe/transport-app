@@ -14,7 +14,11 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('//localhost:8000/disruptions/').then((response) => {
+    this.fetchDisruptions();
+  }
+
+  fetchDisruptions() {
+    fetch('//localhost:8080/disruptions/').then((response) => {
       return response.json();
     }).then((disruptions) => {
       this.setState({
@@ -22,6 +26,26 @@ export default class App extends React.Component {
       });
     });
   }
+
+  handleAddDisruption = (disruptionData) => {
+    fetch('//localhost:8080/disruptions/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(disruptionData)
+    }).then(() => {
+      this.fetchDisruptions();
+    });
+  };
+
+  handleDeleteDisruption = (disruptionId) => {
+    fetch(`//localhost:8080/disruptions/${disruptionId}`, {
+      method: 'DELETE'
+    }).then(() => {
+      this.fetchDisruptions();
+    });
+  };
 
   getMetroLineData() {
     return {
@@ -44,6 +68,8 @@ export default class App extends React.Component {
           lineNumber={lineNumber}
           lineName={metroLineData[lineNumber]}
           lineDisruptions={lineDisruptions}
+          handleAddDisruption={this.handleAddDisruption}
+          handleDeleteDisruption={this.handleDeleteDisruption}
         />
       );
     });

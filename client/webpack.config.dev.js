@@ -28,5 +28,14 @@ module.exports = {
       require('precss'),
       require('postcss-color-function')
     ];
+  },
+
+  devServer: {
+    proxy: {
+      '/disruptions*': {
+        target: 'http://localhost:8000',
+        secure: false
+      }
+    }
   }
 };

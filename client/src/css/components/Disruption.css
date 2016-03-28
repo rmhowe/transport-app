@@ -1,0 +1,26 @@
+.disruption {
+  margin: 20px 0 30px;
+}
+
+.disruption__title {
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+.disruption__text {
+  margin: 10px 0;
+}
+
+.disruption__start-time,
+.disruption__end-time {
+  font-style: italic;
+}
+
+.disruption__delete {
+  margin: 10px 0;
+  color: #F44336;
+}
+
+.disruption__delete:hover {
+  cursor: pointer;
+}

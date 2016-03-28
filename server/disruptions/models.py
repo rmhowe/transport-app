@@ -23,11 +23,11 @@ class Disruption(models.Model):
 
     def to_json(self):
         return {
+            "id": self.id,
             "created": self.created,
             "start_time": self.start_time,
             "end_time": self.end_time,
             "disruption_title": self.disruption_title,
             "disruption_text": self.disruption_text,
-            "line_number": self.metro_line.line_number,
-            "line_name": self.metro_line.line_name
+            "line_number": self.metro_line.line_number
         }
