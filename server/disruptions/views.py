@@ -1,7 +1,10 @@
 from django.core.serializers import serialize
-from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
+from django.http import HttpResponse, JsonResponse, Http404
+from django.shortcuts import get_object_or_404
 
 from .models import Disruption, MetroLine
+
+import json
 
 def access_all(request):
     if request.method == 'GET':
@@ -9,7 +12,7 @@ def access_all(request):
     elif request.method == 'POST':
         return create_disruption(request)
     else:
-        return HttpResponseBadRequest()
+        return HttpResponseBadRequest(status=400)
 
 def access_one(request, disruption_id):
     if request.method == 'GET':
@@ -17,20 +20,36 @@ def access_one(request, disruption_id):
     elif request.method == 'DELETE':
         return delete_disruption(disruption_id)
     else:
-        return HttpResponseBadRequest()
+        return HttpResponse(status=400)
 
 def get_all_disruptions():
     all_disruptions = list(Disruption.objects.values())
     return JsonResponse(dict(data=all_disruptions))
 
 def create_disruption(request):
-    response = "It appears you would like to CREATE a disruption notice"
-    return HttpResponse(response)
+    disruption = json.loads(request.body)
+    try:
+        Disruption.objects.create(
+            metro_line=MetroLine.objects.get(line_number=disruption["line_number"]),
+            start_time=disruption["start_time"],
+            end_time=disruption["end_time"],
+            disruption_title=disruption["disruption_title"],
+            disruption_text=disruption["disruption_text"]
+        )
+        return HttpResponse(status=201)
+    except Error:
+        return HttpResponse(status=500)
 
 def get_disruption(disruption_id):
-    disruption = Disruption.objects.get(id=disruption_id)
+    disruption = get_object_or_404(Disruption, id=disruption_id)
     return JsonResponse(disruption.to_json())
 
 def delete_disruption(disruption_id):
-    response = "It appears you would like to DELETE disruption notice with id %s"
-    return HttpResponse(response % disruption_id)
+    try:
+        disruption = Disruption.objects.get(id=disruption_id)
+        disruption.delete()
+        return HttpResponse(status=204)
+    except Disruption.DoesNotExist:
+        return Http404("Specified disruption does not exist")
+    except Error:
+        return HttpResponse(status=500)
