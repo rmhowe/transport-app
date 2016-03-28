@@ -3,3 +3,4 @@ client/npm-debug.log
 client/dist/
 server/transport_app/settings.py
 *.pyc
+server/db.sqlite3
