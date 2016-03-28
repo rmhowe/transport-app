@@ -2,18 +2,22 @@ $top-border-style: 13px solid;
 
 .metro-line {
   padding: 10px;
-  width: 25%;
+  width: 100%;
   float: left;
+  overflow: scroll;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .metro-line {
-    width: 100%;
+    height: 100%;
+    width: 25%;
   }
 }
 
 .metro-line__name {
-  margin: 0 0 10px;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #aaa;
 }
 
 .metro-line--yonge-university {

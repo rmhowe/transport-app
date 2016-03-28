@@ -1,9 +1,11 @@
 .disruption {
-  margin: 20px 0 30px;
+  margin: 5px 0 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #aaa;
 }
 
 .disruption__title {
-  margin: 10px 0;
+  margin: 0 0 10px;
   font-size: 0.9em;
 }
 

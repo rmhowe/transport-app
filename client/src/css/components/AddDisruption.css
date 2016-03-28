@@ -1,5 +1,11 @@
 .add-disruption {
+  margin: 10px 0;
   width: 100%;
+}
+
+.add-disruption__title {
+  margin: 0 0 10px;
+  font-size: 0.9em;
 }
 
 .add-disruption__label {
