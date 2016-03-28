@@ -23,7 +23,7 @@ def access_one(request, disruption_id):
         return HttpResponse(status=400)
 
 def get_all_disruptions():
-    all_disruptions = [d.to_json() for d in Disruption.objects.all()]
+    all_disruptions = [d.to_dict() for d in Disruption.objects.all()]
     return JsonResponse(dict(data=all_disruptions))
 
 def create_disruption(request):
@@ -42,7 +42,7 @@ def create_disruption(request):
 
 def get_disruption(disruption_id):
     disruption = get_object_or_404(Disruption, id=disruption_id)
-    return JsonResponse(disruption.to_json())
+    return JsonResponse(disruption.to_dict())
 
 def delete_disruption(disruption_id):
     try:

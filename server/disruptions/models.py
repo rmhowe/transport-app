@@ -21,7 +21,7 @@ class Disruption(models.Model):
     def __str__(self):
         return self.disruption_title
 
-    def to_json(self):
+    def to_dict(self):
         return {
             "id": self.id,
             "created": self.created,
