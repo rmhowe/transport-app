@@ -18,8 +18,8 @@ export default class Disruption extends React.Component {
       <div className="disruption">
         <h5 className="disruption__title">{disruption.get('disruption_title')}</h5>
         <div className="disruption__text">{disruption.get('disruption_text')}</div>
-        <span className="disruption__start-time">Start {startTime}</span><br/>
-        <span className="disruption__end-time">End {endTime}</span>
+        From <span className="disruption__start-time">{startTime}</span><br/>
+        until <span className="disruption__end-time">{endTime}</span>
         <div
           className="disruption__delete"
           onClick={this.deleteDisruption}
