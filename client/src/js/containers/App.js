@@ -17,6 +17,18 @@ export default class App extends React.Component {
     this.fetchDisruptions();
   }
 
+  handleAddDisruption = (disruptionData) => {
+    this.addDisruption(disruptionData).then(() => {
+      this.fetchDisruptions();
+    });
+  };
+
+  handleDeleteDisruption = (disruptionId) => {
+    this.deleteDisruption(disruptionId).then(() => {
+      this.fetchDisruptions();
+    });
+  };
+
   fetchDisruptions() {
     fetch('//localhost:8080/disruptions/').then((response) => {
       return response.json();
@@ -27,25 +39,21 @@ export default class App extends React.Component {
     });
   }
 
-  handleAddDisruption = (disruptionData) => {
-    fetch('//localhost:8080/disruptions/', {
+  addDisruption(disruptionData) {
+    return fetch('//localhost:8080/disruptions/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(disruptionData)
-    }).then(() => {
-      this.fetchDisruptions();
     });
-  };
+  }
 
-  handleDeleteDisruption = (disruptionId) => {
-    fetch(`//localhost:8080/disruptions/${disruptionId}`, {
+  deleteDisruption(disruptionId) {
+    return fetch(`//localhost:8080/disruptions/${disruptionId}`, {
       method: 'DELETE'
-    }).then(() => {
-      this.fetchDisruptions();
     });
-  };
+  }
 
   getMetroLineData() {
     return {

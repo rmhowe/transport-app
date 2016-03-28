@@ -2,3 +2,5 @@ $yonge-university-color: rgb(255, 196, 30);
 $bloor-danforth-color: rgb(43, 114, 10);
 $scarborough-color: rgb(10, 103, 151);
 $sheppard-color: rgb(139, 25, 98);
+
+$grey-border: 1px solid #aaa;
