@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Disruption from './Disruption';
 import AddDisruption from './AddDisruption';
 
@@ -18,7 +19,7 @@ export default class MetroLine extends React.Component {
   render() {
     const lineDisruptions = this.getLineDisruptions();
     let noDisruptionsMessage;
-    if (lineDisruptions.length === 0) {
+    if (lineDisruptions.size === 0) {
       noDisruptionsMessage = <span className="metro-line__no-disruptions">There are currently no service disruptions on this line</span>;
     }
     const className = `metro-line metro-line--${this.props.lineName.toLowerCase()}`;

@@ -4,7 +4,8 @@ $top-border-style: 13px solid;
   padding: 10px;
   width: 100%;
   float: left;
-  overflow: scroll;
+  overflow-y: scroll;
+  -webkit-transform: translate3d(0,0,0);
 }
 
 @media only screen and (min-width: 768px) {

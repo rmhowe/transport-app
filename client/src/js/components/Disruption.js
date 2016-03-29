@@ -1,9 +1,12 @@
 import React from 'react';
+import Moment from 'moment';
 
 export default class Disruption extends React.Component {
   parseDate(isoDate) {
-    const date = new Date(isoDate);
-    return `${date.toDateString()} ${date.toLocaleTimeString()}`;
+    if (isoDate) {
+      const moment = new Moment(isoDate);
+      return moment.format('DD MMM YYYY HH:mm');
+    }
   }
 
   deleteDisruption = () => {
