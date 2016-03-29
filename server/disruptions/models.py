@@ -10,13 +10,14 @@ class MetroLine(models.Model):
     def __str__(self):
         return self.line_name
 
+
 class Disruption(models.Model):
     metro_line = models.ForeignKey(MetroLine, on_delete=models.CASCADE)
     created = models.DateTimeField(default=timezone.now)
     start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    end_time = models.DateTimeField(null=True, blank=True)
     disruption_title = models.CharField(max_length=200)
-    disruption_text = models.TextField()
+    disruption_text = models.TextField(default="", blank=True)
 
     def __str__(self):
         return self.disruption_title

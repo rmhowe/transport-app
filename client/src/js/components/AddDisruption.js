@@ -27,9 +27,9 @@ export default class AddDisruption extends React.Component {
     return (
       <div className="add-disruption">
         <h5 className="add-disruption__title">Create Disruption Notice</h5>
-        <span className={labelClass}>Title</span><input ref="title" className={valueClass}/><br/>
+        <span className={labelClass}>Title*</span><input ref="title" className={valueClass}/><br/>
         <span className={labelClass}>Description</span><textarea ref="description" className={valueClass}/><br/>
-        <span className={labelClass}>From</span><input ref="startTime" className={valueClass}/><br/>
+        <span className={labelClass}>From*</span><input ref="startTime" className={valueClass}/><br/>
         <span className={labelClass}>Until</span><input ref="endTime" className={valueClass}/><br/>
         <div
           className="add-disruption__submit"
