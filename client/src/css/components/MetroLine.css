@@ -1,0 +1,46 @@
+$top-border-style: 13px solid;
+
+.metro-line {
+  padding: 10px;
+  width: 100%;
+  float: left;
+  overflow-y: scroll;
+  overflow-x: visible;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+@media only screen and (min-width: 768px) {
+  .metro-line {
+    height: 100%;
+    width: 25%;
+  }
+}
+
+.metro-line__name {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: $grey-border;
+}
+
+.metro-line__no-disruptions {
+  display: inline-block;
+  padding: 10px 0;
+  border-bottom: $grey-border;
+  font-style: italic;
+}
+
+.metro-line--yonge-university {
+  border-top: $top-border-style $yonge-university-color;
+}
+
+.metro-line--bloor-danforth {
+  border-top: $top-border-style $bloor-danforth-color;
+}
+
+.metro-line--scarborough {
+  border-top: $top-border-style $scarborough-color;
+}
+
+.metro-line--sheppard {
+  border-top: $top-border-style $sheppard-color;
+}

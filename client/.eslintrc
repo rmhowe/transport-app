@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "mocha": true
   },
 
   "parser": "babel-eslint",
@@ -65,13 +66,16 @@
     "no-use-before-define": [1, "nofunc"],
     "no-with": 2,
     "use-isnan": 1,
-    "valid-typeof": 2
+    "valid-typeof": 2,
+
+    "mocha/no-exclusive-tests": 2
   },
 
   "globals": {
   },
 
   "plugins": [
-    "react"
+    "react",
+    "mocha"
   ]
 }

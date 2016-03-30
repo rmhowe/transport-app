@@ -24,10 +24,18 @@ module.exports = {
       require('postcss-import')({
         addDependencyTo: webpack
       }),
-      require('autoprefixer'),
-      require('cssnext'),
+      require('postcss-cssnext'),
       require('precss'),
       require('postcss-color-function')
     ];
+  },
+
+  devServer: {
+    proxy: {
+      '/disruptions*': {
+        target: 'http://localhost:8000',
+        secure: false
+      }
+    }
   }
 };

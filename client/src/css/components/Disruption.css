@@ -1,0 +1,25 @@
+.disruption {
+  margin: 5px 0 10px;
+  padding: 10px 0;
+  border-bottom: $grey-border;
+}
+
+.disruption__title {
+  margin: 0 0 10px;
+  font-size: 0.9em;
+}
+
+.disruption__text {
+  margin: 10px 0;
+}
+
+.disruption__start-time,
+.disruption__end-time {
+  font-style: italic;
+}
+
+.disruption__delete {
+  @mixin button #F44336;
+  display: inline-block;
+  margin: 10px 0;
+}
