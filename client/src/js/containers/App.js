@@ -8,7 +8,7 @@ import fetch from 'isomorphic-fetch';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.urlRoot = '//localhost:8080';
+    this.urlRoot = '/';
     this.state = {
       disruptions: Immutable.List()
     };
@@ -31,7 +31,7 @@ export default class App extends React.Component {
   };
 
   fetchDisruptions() {
-    fetch(`${this.urlRoot}/disruptions/`).then((response) => {
+    fetch(`${this.urlRoot}disruptions/`).then((response) => {
       return response.json();
     }).then((disruptions) => {
       this.setState({
@@ -41,7 +41,7 @@ export default class App extends React.Component {
   }
 
   addDisruption(disruptionData) {
-    return fetch(`${this.urlRoot}/disruptions/`, {
+    return fetch(`${this.urlRoot}disruptions/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -51,7 +51,7 @@ export default class App extends React.Component {
   }
 
   deleteDisruption(disruptionId) {
-    return fetch(`${this.urlRoot}/disruptions/${disruptionId}`, {
+    return fetch(`${this.urlRoot}disruptions/${disruptionId}`, {
       method: 'DELETE'
     });
   }
