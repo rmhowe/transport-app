@@ -4,7 +4,7 @@
   "description": "An app for editing service disruption information for metro lines",
   "scripts": {
     "dev": "webpack-dev-server --devtool source-map --hot --config webpack.config.dev.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test-helper.js 'test/**/*.js' || true",
+    "test": "mocha --compilers js:babel-core/register --require ./test/.setup.js 'test/**/*.js' || true",
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
@@ -26,7 +26,7 @@
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.0",
     "precss": "^1.4.0",
-    "react": "^0.14.7",
+    "react": "^0.14.8",
     "react-datetime": "^2.1.0",
     "react-dom": "^0.14.6",
     "style-loader": "^0.12.3",
@@ -35,12 +35,15 @@
   },
   "devDependencies": {
     "babel-eslint": "^6.0.0-beta.5",
-    "chai": "^3.3.0",
+    "chai": "^3.5.0",
+    "enzyme": "^2.2.0",
     "eslint": "^2.2.0",
+    "eslint-plugin-mocha": "^2.0.0",
     "eslint-plugin-react": "^3.3.1",
     "js-cookie": "^2.1.0",
     "jsdom": "^6.5.1",
     "mocha": "^2.3.3",
+    "react-addons-test-utils": "^0.14.8",
     "webpack-dev-server": "^1.14.0"
   }
 }
