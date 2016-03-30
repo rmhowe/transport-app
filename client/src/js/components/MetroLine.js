@@ -5,9 +5,9 @@ import AddDisruption from './AddDisruption';
 
 export default class MetroLine extends React.Component {
   static propTypes = {
-    lineNumber: React.PropTypes.string,
-    lineName: React.PropTypes.string,
-    lineDisruptions: React.PropTypes.object,
+    lineNumber: React.PropTypes.string.isRequired,
+    lineName: React.PropTypes.string.isRequired,
+    lineDisruptions: React.PropTypes.object.isRequired,
     handleAddDisruption: React.PropTypes.func,
     handleDeleteDisruption: React.PropTypes.func
   };

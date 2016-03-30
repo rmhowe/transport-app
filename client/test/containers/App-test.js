@@ -12,7 +12,7 @@ describe("App", () => {
     app = mount(<App/>);
   });
 
-  it("renders a div", () => {
-    expect(app).contains(<div className="app" />).to.equal(true);
+  it("begins with no disruptions", () => {
+    expect(app.state('disruptions').size).to.equal(0);
   });
 });

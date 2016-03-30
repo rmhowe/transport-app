@@ -3,8 +3,8 @@ import Moment from 'moment';
 
 export default class Disruption extends React.Component {
   static propTypes = {
-    disruption: React.PropTypes.object,
-    handleDeleteDisruption: React.PropTypes.func
+    disruption: React.PropTypes.object.isRequired,
+    handleDeleteDisruption: React.PropTypes.func.isRequired
   };
 
   parseDate(isoDate) {

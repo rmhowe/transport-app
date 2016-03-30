@@ -3,8 +3,8 @@ import DateTime from 'react-datetime';
 
 export default class AddDisruption extends React.Component {
   static propTypes = {
-    lineNumber: React.PropTypes.string,
-    handleAddDisruption: React.PropTypes.func
+    lineNumber: React.PropTypes.string.isRequired,
+    handleAddDisruption: React.PropTypes.func.isRequired
   };
 
   constructor(props) {
