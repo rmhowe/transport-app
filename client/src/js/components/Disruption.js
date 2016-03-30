@@ -2,6 +2,11 @@ import React from 'react';
 import Moment from 'moment';
 
 export default class Disruption extends React.Component {
+  static propTypes = {
+    disruption: React.PropTypes.object,
+    handleDeleteDisruption: React.PropTypes.func
+  };
+
   parseDate(isoDate) {
     if (isoDate) {
       const moment = new Moment(isoDate);

@@ -4,6 +4,14 @@ import Disruption from './Disruption';
 import AddDisruption from './AddDisruption';
 
 export default class MetroLine extends React.Component {
+  static propTypes = {
+    lineNumber: React.PropTypes.string,
+    lineName: React.PropTypes.string,
+    lineDisruptions: React.PropTypes.object,
+    handleAddDisruption: React.PropTypes.func,
+    handleDeleteDisruption: React.PropTypes.func
+  };
+
   getLineDisruptions() {
     return this.props.lineDisruptions.map((disruption, i) => {
       return (

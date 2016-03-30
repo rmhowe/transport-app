@@ -2,6 +2,11 @@ import React from 'react';
 import DateTime from 'react-datetime';
 
 export default class AddDisruption extends React.Component {
+  static propTypes = {
+    lineNumber: React.PropTypes.string,
+    handleAddDisruption: React.PropTypes.func
+  };
+
   constructor(props) {
     super(props);
     this.state = {
