@@ -37,12 +37,5 @@ module.exports = {
         secure: false
       }
     }
-  },
-
-  externals: {
-    'cheerio': 'window',
-    'react-dom': true,
-    'react-dom/server': true,
-    'react-addons-test-utils': true
   }
 };
