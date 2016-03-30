@@ -19,10 +19,7 @@
 }
 
 .disruption__delete {
+  @mixin button #F44336;
+  display: inline-block;
   margin: 10px 0;
-  color: #F44336;
-}
-
-.disruption__delete:hover {
-  cursor: pointer;
 }

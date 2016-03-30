@@ -23,10 +23,12 @@ textarea.add-disruption__value {
   height: 60px;
 }
 
-.add-disruption__submit {
-  float: right;
+.add-disruption__value input {
+  width: 100%;
 }
 
-.add-disruption__submit:hover {
-  cursor: pointer;
+.add-disruption__submit {
+  @mixin button #666;
+  margin-top: 5px;
+  float: right;
 }
